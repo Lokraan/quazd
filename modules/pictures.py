@@ -24,7 +24,7 @@ def download_web_image():
         print("\n ------------ \n Broken link! \n ------------ \n")
 
 # This one you can just run within a web crawler to automatically download
-# Every picture on the web page without having to specify an individual name
+# pictures on the web page without having to specify an individual name
 # For each of them manually
 
 
@@ -33,7 +33,7 @@ def download_image_auto(url):
     backslash = '\ '.strip(' ')
     # randomly assigns a name
     name = backslash + randint(0, 100000)
-    full_name = "webCrawlerAutoPics" + name + ".png"
+    full_name = "webCrawlerAutoPics/" + name + ".png"
 
     # Checks to see if the directory exists already
     if not os.path.exists(os.getcwd() + backslash + 'webCrawlerAutoPics'):
@@ -41,7 +41,7 @@ def download_image_auto(url):
         os.mkdir(os.getcwd() + backslash + 'webCrawlerAutoPics')
 
     # checks to see if the randomly assigned name is already assigned
-    while os.path.isfile("webCrawlerAutoPics/" + name + ".png"):
+    while os.path.isfile(full_name):
         # repeats until it finds one that isn't
         name = backslash + randint(0, 100000)
         full_name = "webCrawlerAutoPics/" + name + ".png"
